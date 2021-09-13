@@ -1,8 +1,16 @@
 const io = require("socket.io-client");
 
-const socket = io("ws://localhost:3001");
+const socket = io("ws://localhost:3000");
 
-socket.emit('event',"hello")
+
+    socket.emit('event', "Hello from clientA");
+
+
+
+    socket.on('event', (message)=>{
+        console.log("Print By Client B: "+message);
+    })
+
 
 
 
